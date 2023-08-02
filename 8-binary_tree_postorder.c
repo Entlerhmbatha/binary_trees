@@ -1,16 +1,16 @@
 #include "binary_trees.h"
 
 /**
- * binary_tree_postorder - inoshandisa thru a binary_tree ne post-order traverse
- * @tree: tree_traverse
- * @func: fanksheni to call node ngayinye ngayinye
+ * binary_tree_postorder - Traverses a binary tree isebenzisa post-order traversal.
+ * @tree: A pointer yakwi mpande ye node ye tree to traverse.
+ * @func: A pointer kwi fankshini ukubiza for each node.
  */
 void binary_tree_postorder(const binary_tree_t *tree, void (*func)(int))
 {
-	if (!tree || !func)
-		return;
-
-	binary_tree_postorder(tree->left, func);
-	binary_tree_postorder(tree->right, func);
-	func(tree->n);
+	if (tree && func)
+	{
+		binary_tree_postorder(tree->left, func);
+		binary_tree_postorder(tree->right, func);
+		func(tree->n);
+	}
 }
